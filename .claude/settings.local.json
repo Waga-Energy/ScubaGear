@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(powershell.exe -NoProfile -Command \"Write-Host ''Test 1: Chargement du module...''; try { Import-Module .\\PowerShell\\ScubaGear\\ScubaGear.psd1 -Force -ErrorAction Stop; Write-Host ''Module charge avec succes'' -ForegroundColor Green } catch { Write-Host \"\"Erreur: $_\" -ForegroundColor Red }\")",
+      "Bash(powershell.exe -NoProfile -File check_deps.ps1)",
+      "Bash(powershell.exe -NoProfile -Command \"Import-Module .\\PowerShell\\ScubaGear\\ScubaGear.psd1 -Force; Write-Host ''Module charge avec succes''\")",
+      "Bash(powershell.exe -NoProfile -Command \"Import-Module .\\PowerShell\\ScubaGear\\ScubaGear.psd1 -Force; Write-Host ''Module charge avec succes''; Get-Module ExchangeOnlineManagement | Select-Object Name, Version\")",
+      "Bash(powershell.exe -NoProfile -Command \"Import-Module .\\PowerShell\\ScubaGear\\ScubaGear.psd1 -Force; Invoke-SCuBA -ProductNames defender -OutPath .\\Results\\ -LogIn $false -SilenceBODWarnings\")"
+    ]
+  }
+}

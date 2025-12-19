@@ -1264,7 +1264,7 @@ function Invoke-ReportCreation {
                 $PassesSummary = "<div class='summary'></div>"
                 $WarningsSummary = "<div class='summary'></div>"
                 $FailuresSummary = "<div class='summary'></div>"
-                $BaselineURL = "<a href= `"https://github.com/cisagov/ScubaGear/blob/v$($ModuleVersion)/baselines`" target=`"_blank`"><h3 style=`"width: 100px;`">Baseline Documents</h3></a>"
+                $BaselineURL = "<a href= `"https://github.com/cisagov/ScubaGear/blob/main/baselines`" target=`"_blank`"><h3 style=`"width: 100px;`">Baseline Documents</h3></a>"
                 $ManualSummary = "<div class='summary'></div>"
                 $OmitSummary = "<div class='summary'></div>"
                 $IncorrectResultSummary = "<div class='summary'></div>"

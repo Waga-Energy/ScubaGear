@@ -375,7 +375,7 @@ function New-Report {
         $Number = $BaselineName.ToUpper() + '-' + $BaselineGroup.GroupNumber
         $Name = $BaselineGroup.GroupName
         $GroupAnchor = New-MarkdownAnchor -GroupNumber $BaselineGroup.GroupNumber -GroupName $BaselineGroup.GroupName
-        $GroupReferenceURL = "$($ScubaGitHubUrl)/blob/v$($SettingsExport.module_version)/PowerShell/ScubaGear/baselines/$($BaselineName.ToLower()).md$GroupAnchor"
+        $GroupReferenceURL = "$($ScubaGitHubUrl)/blob/main/PowerShell/ScubaGear/baselines/$($BaselineName.ToLower()).md$GroupAnchor"
         $MarkdownLink = "<a class='control_group' href=`"$($GroupReferenceURL)`" target=`"_blank`">$Name</a>"
         # Create a version of the object without the omitted evaluation keys, otherwise they
         # would show up as columns on the HTML report.
@@ -416,7 +416,7 @@ function New-Report {
     $Title = "$($FullName) Baseline Report"
     $AADWarning = "The ScubaGear configuration file provides the capability to exclude specific users or groups from some of the Entra ID policy checks.
     Exclusions must only be used if they are approved within an organization's security risk acceptance process.
-    See <a href=`"$($ScubaGitHubUrl)/blob/v$($SettingsExport.module_version)/docs/configuration/configuration.md#entra-id-configuration`" target=`"_blank`">this section in the product documentation</a>
+    See <a href=`"$($ScubaGitHubUrl)/blob/main/docs/configuration/configuration.md#entra-id-configuration`" target=`"_blank`">this section in the product documentation</a>
     for a list of the policies that accept exclusions and the instructions for setting up exclusions in the configuration file.
     <i>Exclusions can introduce grave risks to your system and must be managed carefully.</i>"
     $NoWarning = "<br/>"
@@ -426,7 +426,7 @@ function New-Report {
     $ReportHTMLPath = Join-Path -Path $ReporterPath -ChildPath "IndividualReport"
     $ReportHTML = (Get-Content $(Join-Path -Path $ReportHTMLPath -ChildPath "IndividualReport.html")) -Join "`n"
     $ReportHTML = $ReportHTML.Replace("{TITLE}", $Title)
-    $BaselineURL = "<a href=`"$($ScubaGitHubUrl)/blob/v$($SettingsExport.module_version)/PowerShell/ScubaGear/baselines/$($BaselineName.ToLower()).md`" target=`"_blank`"><h3 style=`"width: 100px;`">Baseline Documents</h3></a>"
+    $BaselineURL = "<a href=`"$($ScubaGitHubUrl)/blob/main/PowerShell/ScubaGear/baselines/$($BaselineName.ToLower()).md`" target=`"_blank`"><h3 style=`"width: 100px;`">Baseline Documents</h3></a>"
     $ReportHTML = $ReportHTML.Replace("{BASELINE_URL}", $BaselineURL)
 
     # Handle AAD-specific reporting
